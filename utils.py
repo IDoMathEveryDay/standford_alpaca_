@@ -13,6 +13,10 @@ import tqdm
 from openai import openai_object
 import copy
 
+import os
+os.environ["OPENAI_API_KEY"] = "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"
+openai.api_key = "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"
+
 StrOrOpenAIObject = Union[str, openai_object.OpenAIObject]
 
 openai_org = os.getenv("OPENAI_ORG")
@@ -47,6 +51,7 @@ def openai_completion(
     return_text=False,
     **decoding_kwargs,
 ) -> Union[Union[StrOrOpenAIObject], Sequence[StrOrOpenAIObject], Sequence[Sequence[StrOrOpenAIObject]],]:
+    
     """Decode with OpenAI API.
 
     Args:

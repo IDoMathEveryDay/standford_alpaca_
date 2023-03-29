@@ -23,7 +23,6 @@ import utils
 
 import fire
 
-
 def encode_prompt(prompt_instructions):
     """Encode multiple prompt instructions into a single string."""
     prompt = open("./prompt.txt").read() + "\n"
